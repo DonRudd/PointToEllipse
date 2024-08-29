@@ -10,7 +10,7 @@ def PointToEllipse(p, c, u, v):
     if c1 == 0 and c2 < 0:
         # Odd things happen when your point is in line with the major axis on the negative side? [1, 5]
         # I'm guessing because the polynomial reduces to x^3 + x = 0 --> x(x^2 + 1) = 0 and this has ONE real solution.
-        c1 = 1e-4
+        c1 = 1e-9
     roots = Polynomial([c1, 2*c2 + 4*c3, 0, 2*c2 - 4*c3, -c1]).roots()
     closest = None
     for z in roots:
