@@ -23,8 +23,39 @@ def PointToEllipse(p, c, u, v):
                 closest = pt
     return closest
 
-print(PointToEllipse(np.array([0, 5]), np.array([5, 5]), np.array([3, 0]), np.array([0, 1.5])))
-#print(PointToEllipse(np.array([10, 5]), np.array([5, 5]), np.array([3, 0]), np.array([0, 1.5])))
+def visualize_projection(p, c, u, v):
+    closest_point = PointToEllipse(p, c, u, v)
+
+    # Define the ellipse
+    t = np.linspace(0, 2 * np.pi, 100)
+    ellipse = c[:, np.newaxis] + u[:, np.newaxis] * np.cos(t) + v[:, np.newaxis] * np.sin(t)
+
+    # Understanding this np.newaxis notation:
+    # 1. https://numpy.org/doc/stable/reference/constants.html#numpy.newaxis
+    # 2. https://www.reddit.com/r/learnpython/comments/13vs2fu/need_help_to_understand_the_notation_x_npnewaxis/
+
+    # Plotting
+    plt.figure(figsize=(6, 6))
+    plt.plot(ellipse[0], ellipse[1], label='Ellipse')
+    plt.scatter(*p, color='red', label='Point P')
+    plt.scatter(*closest_point, color='blue', label='Closest Point on Ellipse')
+    plt.plot([p[0], closest_point[0]], [p[1], closest_point[1]], 'k--', label='Projection Line')
+    
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+    plt.gca().set_aspect('equal', adjustable='box')
+    plt.title('Projection of Point onto Ellipse')
+    plt.grid(True)
+    plt.show()
+
+p = np.array([0, 5])
+c = np.array([5, 5])
+u = np.array([3, 0])
+v = np.array([0, 1.5])
+
+print(PointToEllipse(p, c, u, v))
+visualize_projection(p, c, u, v)
 
 '''
 Cubic and Quartic Reference: https://quarticequations.com/Tutorial.pdf
@@ -110,35 +141,4 @@ def PointToEllipse(p, c, u, v):
             if (closest is None) or (closest is not None and np.linalg.norm(pt - p) < np.linalg.norm(closest - p)):
                 closest = pt
     return closest
-'''
-
-'''
-# GPT Generated Visualizer
-def visualize_projection(p, c, u, v):
-    closest_point = PointToEllipse(p, c, u, v)
-
-    # Define the ellipse
-    t = np.linspace(0, 2 * np.pi, 100)
-    ellipse = c[:, np.newaxis] + u[:, np.newaxis] * np.cos(t) + v[:, np.newaxis] * np.sin(t)
-
-    # Understanding this np.newaxis notation:
-    # 1. https://numpy.org/doc/stable/reference/constants.html#numpy.newaxis
-    # 2. https://www.reddit.com/r/learnpython/comments/13vs2fu/need_help_to_understand_the_notation_x_npnewaxis/
-
-    # Plotting
-    plt.figure(figsize=(6, 6))
-    plt.plot(ellipse[0], ellipse[1], label='Ellipse')
-    plt.scatter(*p, color='red', label='Point P')
-    plt.scatter(*closest_point, color='blue', label='Closest Point on Ellipse')
-    plt.plot([p[0], closest_point[0]], [p[1], closest_point[1]], 'k--', label='Projection Line')
-    
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.legend()
-    plt.gca().set_aspect('equal', adjustable='box')
-    plt.title('Projection of Point onto Ellipse')
-    plt.grid(True)
-    plt.show()
-
-visualize_projection(np.array([0, 5]), np.array([5, 5]), np.array([3, 0]), np.array([0, 1.5]))
 '''
