@@ -6,15 +6,21 @@ $$\textbf{x}(t) = \textbf{c} + \textbf{u}\cos{t} + \textbf{v}\sin{t},\ 0 \le t \
 
 where x is your position along the elipse given position t, c is the center of the ellipse, u is the vector of representing the length of the major axis, v is the vector representing the length of the minor axis
 
-![image](https://github.com/user-attachments/assets/7898f859-6bf1-44de-bbe7-69b6a730e96c)
+![image](https://github.com/user-attachments/assets/0e7f6845-d844-4f2a-9b9f-283f0782c1fc)
 
-How do I project a point $\textbf{p}$ onto this parametric equation? If you agree that the projection of your point onto the ellipse lies along the line from the point to the center, then you must consider what relationships we can exploit in order to create an equation that we can use to solve for t in this situation. You'll notice that the derivative should visually be perpendicular to this line, hence the name orthogonal projection. Using this fact:
+How do I project a point $\textbf{p}$ onto this parametric equation? We must consider what is going on in this situation. What relationships can we exploit in this situation. When we draw it out, we realize that the line from p to the closest point on your ellipse will be perpendicular to the tangent line at that point (hence the name orthogonal projection). This means that
 
-$$(\textbf{x}(t) - \textbf{p})\cdot \textbf{x}'(t) = 0 \implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0 \implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
+$$(\textbf{x}(t) - \textbf{p})\cdot \textbf{x}'(t) = 0$$
+
+Expanding this equation out, 
+
+$$\implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0 \implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
 
 where $C_1 = (\textbf{c} - \textbf{p})\cdot \textbf{v}, C_2 = (\textbf{p} - \textbf{c})\cdot \textbf{u}, C_3 = \frac{1}{2}(\textbf{u}\cdot \textbf{u} - \textbf{v}\cdot \textbf{v})$
 
-We can convert this equation from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$
+We can convert this equation from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$. This substitution comes from the fact that:
+
+[Insert Triangle Graphic Here]
 
 To be continued...
 
