@@ -4,7 +4,7 @@ Given the parametric equation for an ellipse
 
 $$\textbf{x}(t) = \textbf{c} + \textbf{u}\cos{t} + \textbf{v}\sin{t},\ 0 \le t \le 2\pi$$
 
-where x is your position along the elipse given position t, c is the center of the ellipse, u is the vector of representing the length of the major axis, v is the vector representing the length of the minor axis
+where x is your position along the elipse given parameter t, c is the center of the ellipse, u is the vector of representing the length of the major axis, v is the vector representing the length of the minor axis
 
 ![image](https://github.com/user-attachments/assets/0e7f6845-d844-4f2a-9b9f-283f0782c1fc)
 
@@ -28,7 +28,17 @@ How do we solve something like this? Well it can be converted from a trigonometr
 
 [Insert Triangle Graphic Here]
 
-To be continued...
+From this we can derive
+
+$$\sin\left(\frac{t}{2}\right) = \frac{z}{\sqrt{1+z^2}}, \cos\left(\frac{t}{2}\right) = \frac{1}{\sqrt{1+z^2}} \implies \sin{t} = 2\sin\left(\frac{t}{2}\right)\cos\left(\frac{t}{2}\right) = \frac{2z}{1+z^2}, \cos{2t} = \cos^2(t) - \sin^2(t) = \frac{1 - z^2}{1 + z^2}, \sin{2t} = \frac{4z(1-z^2)}{(1+z^2)^2}$$
+
+Plugging this into our earlier equation gives us
+
+$$C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0\implies C_1\frac{1-z^2}{1+z^2} + C_2\frac{2z}{1+z^2} + C_3\frac{4z(1-z^2)}{(1+z^2)^2} = 0\implies C_1(1-z^2)(1+z^2) + C_2(2z)(1+z^2) + C_3(4z)(1-z^2) = 0$$
+
+$$-C_1z^4 + (2C_2 - 4C_3)z^3 + (2C_2 + 4C_3)z + C_1 = 0$$
+
+This Polynomial can be solved using any **polynomial/quartic solver** for z. Once the closest real root is found, calculate t by $t = 2\tan^{-1}(z)$
 
 # References:
 1. https://math.stackexchange.com/questions/4959431/orthogonal-projection-of-a-point-onto-an-oriented-ellipse-in-r3
