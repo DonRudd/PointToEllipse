@@ -10,7 +10,11 @@ where x is your position along the elipse given position t, c is the center of t
 
 How do I project a point $\textbf{p}$ onto this parametric equation? If you agree that the projection of your point onto the ellipse lies along the line from the point to the center, then you must consider what relationships we can exploit in order to create an equation that we can use to solve for t in this situation. You'll notice that the derivative should visually be perpendicular to this line, hence the name orthogonal projection. Using this fact:
 
-$$(\textbf{x}(t) - \textbf{p})\cdot \textbf{x}'(t) = 0 \implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = (-(\textbf{c}\cdot \textbf{u})\sin{t} + (\textbf{c}\cdot \textbf{p})\sin{t})$$
+$$(\textbf{x}(t) - \textbf{p})\cdot \textbf{x}'(t) = 0 \implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0 \implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
+
+where $C_1 = (\textbf{c} - \textbf{p})\cdot \textbf{v}, C_2 = (\textbf{p} - \textbf{c})\cdot \textbf{u}, C_3 = \frac{1}{2}(\textbf{u}\cdot \textbf{u} - \textbf{v}\cdot \textbf{v})$
+
+We can convert this equation from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$
 
 To be continued...
 
