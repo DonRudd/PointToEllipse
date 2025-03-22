@@ -14,11 +14,17 @@ $$(\textbf{x}(t) - \textbf{p})\cdot \textbf{x}'(t) = 0$$
 
 Expanding this equation out, 
 
-$$\implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0 \implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
+$$\implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0$$
+
+$$\implies (c\cdot v - p\cdot v)\cos{t} + (p\cdot u - c\cdot u)\sin{t} + (v^2 - u^2)\cos{t}\sin{t} + (u\cdot v)(\cos^2{t} - \sin^2{t}) = 0$$
+
+Since we assume our axes u and v are orthogonal, $u\cdot v = 0$ and we can get rid of that term. Additionally, using the double angle identity $\sin{2t} = 2\cos{t}\sin{t}$, we can simplify
+
+$$\implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
 
 where $C_1 = (\textbf{c} - \textbf{p})\cdot \textbf{v}, C_2 = (\textbf{p} - \textbf{c})\cdot \textbf{u}, C_3 = \frac{1}{2}(\textbf{u}\cdot \textbf{u} - \textbf{v}\cdot \textbf{v})$
 
-We can convert this equation from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$. This substitution comes from the fact that:
+How do we solve something like this? Well it can be converted from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$. This substitution comes from the fact that:
 
 [Insert Triangle Graphic Here]
 
