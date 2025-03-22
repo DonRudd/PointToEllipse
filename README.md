@@ -26,7 +26,7 @@ where $C_1 = (\textbf{c} - \textbf{p})\cdot \textbf{v}, C_2 = (\textbf{p} - \tex
 
 How do we solve something like this? Well it can be converted from a trigonometric equation into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $z = \tan\left(\frac{t}{2}\right)$. This substitution comes from the fact that:
 
-[Insert Triangle Graphic Here]
+![image](https://github.com/user-attachments/assets/ed46e52a-956c-4216-8bd3-d4ed7889d8b3)
 
 From this we can derive
 
