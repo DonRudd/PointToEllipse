@@ -24,7 +24,7 @@ $$\implies C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0$$
 
 where $C_1 = (\textbf{c} - \textbf{p})\cdot \textbf{v}, C_2 = (\textbf{p} - \textbf{c})\cdot \textbf{u}, C_3 = \frac{1}{2}(\textbf{u}\cdot \textbf{u} - \textbf{v}\cdot \textbf{v})$
 
-How do we solve something like this? Well it can be converted from a trigonometric one into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$. This substitution comes from the fact that:
+How do we solve something like this? Well it can be converted from a trigonometric equation into a polynomial by utilizing [Weierstrass substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution). This involves substituting in $t = \tan\left(\frac{x}{2}\right)$. This substitution comes from the fact that:
 
 [Insert Triangle Graphic Here]
 
