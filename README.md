@@ -38,7 +38,7 @@ $$C_1\cos{t} + C_2\sin{t} + C_3\sin{2t} = 0\implies C_1\frac{1-z^2}{1+z^2} + C_2
 
 $$-C_1z^4 + (2C_2 - 4C_3)z^3 + (2C_2 + 4C_3)z + C_1 = 0$$
 
-This Polynomial can be solved using any **polynomial/quartic solver** for z. Once the closest real root is found, calculate t by $t = 2\tan^{-1}(z)$
+This Polynomial can be solved using any **polynomial/quartic solver** for z. Once you have your roots, for those that are real, solve for t by $t = 2\tan^{-1}(z)$, and identify the closest among them.
 
 # References:
 1. https://math.stackexchange.com/questions/4959431/orthogonal-projection-of-a-point-onto-an-oriented-ellipse-in-r3
