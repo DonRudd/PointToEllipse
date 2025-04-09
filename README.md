@@ -30,7 +30,7 @@ How do we solve something like this? Well it can be converted from a trigonometr
 
 From this we can derive
 
-$$\sin\left(\frac{t}{2}\right) = \frac{z}{\sqrt{1+z^2}}, \cos\left(\frac{t}{2}\right) = \frac{1}{\sqrt{1+z^2}} \implies \sin{t} = 2\sin\left(\frac{t}{2}\right)\cos\left(\frac{t}{2}\right) = \frac{2z}{1+z^2}, \cos{2t} = \cos^2(t) - \sin^2(t) = \frac{1 - z^2}{1 + z^2}, \sin{2t} = \frac{4z(1-z^2)}{(1+z^2)^2}$$
+$$\sin\left(\frac{t}{2}\right) = \frac{z}{\sqrt{1+z^2}}, \cos\left(\frac{t}{2}\right) = \frac{1}{\sqrt{1+z^2}} \implies \sin{t} = 2\sin\left(\frac{t}{2}\right)\cos\left(\frac{t}{2}\right) = \frac{2z}{1+z^2}, \cos{t} = \cos^2\left(\frac{t}{2}\right) - \sin^2\left(\frac{t}{2}\right) = \frac{1 - z^2}{1 + z^2}, \sin{2t} = \frac{4z(1-z^2)}{(1+z^2)^2}$$
 
 Plugging this into our earlier equation gives us
 
