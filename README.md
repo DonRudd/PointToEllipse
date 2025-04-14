@@ -1,7 +1,7 @@
 # Orthogonal Projection of a Point onto an ellipse
 Two different methods are detailed here
-1. Analytic Method using Weierstrass Substitution
-2. Iterative Method using Gradient Descent
+1. [Analytic Method using Weierstrass Substitution](#1-analytic-method-using-weierstrass-substitution)
+2. [Iterative Method using Gradient Descent](#2-iterative-method-using-gradient-descent)
 
 ---
 ### 1. Analytic Method using Weierstrass Substitution
