@@ -1,5 +1,10 @@
 # Orthogonal Projection of a Point onto an ellipse
+Two different methods are detailed here
+1. Analytic Method using Weierstrass Substitution
+2. Iterative Method using Gradient Descent
 
+---
+### 1. Analytic Method using Weierstrass Substitution
 Given the parametric equation for an ellipse
 
 $$\textbf{x}(t) = \textbf{c} + \textbf{u}\cos{t} + \textbf{v}\sin{t},\ 0 \le t \le 2\pi$$
@@ -16,7 +21,7 @@ Expanding this equation out,
 
 $$\implies (\textbf{c} - \textbf{p} + \textbf{u}\cos{t} + \textbf{v}\sin{t})\cdot (-\textbf{u}\sin{t} + \textbf{v}\cos{t}) = 0$$
 
-$$\implies (c\cdot v - p\cdot v)\cos{t} + (p\cdot u - c\cdot u)\sin{t} + (v\cdot v - u\cdot u)\cos{t}\sin{t} + (u\cdot v)(\cos^2{t} - \sin^2{t}) = 0$$
+$$\implies (\mathbf{c}\cdot \mathbf{v} - \mathbf{p}\cdot \mathbf{v})\cos{t} + (\mathbf{p}\cdot \mathbf{u} - \mathbf{c}\cdot \mathbf{u})\sin{t} + (\mathbf{v}\cdot \mathbf{v} - \mathbf{u}\cdot \mathbf{u})\cos{t}\sin{t} + (\mathbf{u}\cdot \mathbf{v})(\cos^2{t} - \sin^2{t}) = 0$$
 
 Since we assume our axes u and v are orthogonal, $u\cdot v = 0$ and we can get rid of that term. Additionally, using the double angle identity $\sin{2t} = 2\cos{t}\sin{t}$, we can simplify
 
@@ -43,3 +48,13 @@ This Polynomial can be solved using any **polynomial/quartic solver** for z. Onc
 # References:
 1. https://math.stackexchange.com/questions/4959431/orthogonal-projection-of-a-point-onto-an-oriented-ellipse-in-r3
 2. https://math.stackexchange.com/questions/4513839/find-projection-point-on-elipse
+
+---
+### 2. Iterative Method using Gradient Descent
+
+Gradient Descent minimizes an objective function $f: \mathbb{R}^n \to \mathbb{R}$. In our case, we want to minimize the distance from a point $\mathbf{p}$ to our ellipse. We can write this as the following: $$\mathbf{d}(t) = \mathbf{c} - \mathbf{p} + \mathbf{u}\cos(t) + \mathbf{v}\sin(t) \\ f(t) = ||\mathbf{d}(t)||_2 = \sqrt{\mathbf{d}(t)^T\mathbf{d}(t)}$$
+
+To be continued...
+
+# References:
+1. [Convex Optimization by Stephen Boyd](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
