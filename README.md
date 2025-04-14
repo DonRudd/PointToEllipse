@@ -52,7 +52,7 @@ This Polynomial can be solved using any **polynomial/quartic solver** for z. Onc
 ---
 ### 2. Iterative Method using Gradient Descent
 
-Gradient Descent minimizes an objective function $f: \mathbb{R}^n \to \mathbb{R}$. In our case, we want to minimize the distance from a point $\mathbf{p}$ to our ellipse. We can write this as the following: $$\mathbf{d}(t) = \mathbf{c} - \mathbf{p} + \mathbf{u}\cos(t) + \mathbf{v}\sin(t) \\ f(t) = ||\mathbf{d}(t)||_2 = \sqrt{\mathbf{d}(t)^T\mathbf{d}(t)}$$
+Gradient Descent minimizes an objective function $f: \mathbb{R}^n \to \mathbb{R}$. In our case, we want to minimize the distance from a point $\mathbf{p}$ to our ellipse. We can write this as the following: $$\mathbf{x}(t) = \mathbf{c} + \mathbf{u}\cos(t) + \mathbf{v}\sin(t) \\ f(t) = ||\mathbf{x}(t) - \mathbf{p}||_2 = ||\mathbf{c} - \mathbf{p} + \mathbf{u}\cos(t) + \mathbf{v}\sin(t)||_2$$
 
 To be continued...
 
