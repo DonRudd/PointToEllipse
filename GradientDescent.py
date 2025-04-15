@@ -24,14 +24,14 @@ beta = 0.8
 #Gradient Descent with backtracking line search
 for i in range(max_iterations):
     delta_t = -f_prime(t)
-    if abs(delta_t) <= tolerance:
-        print(f'Algorithm ended after {i} iterations.')
-        print(f't = {t}, f(t) = {f(t)}')
-        break
     s = 1
     while f(t + s*delta_t) > f(t) - alpha*s*delta_t**2:
         s = beta*s
     t = t + s*delta_t
+    if abs(delta_t) <= tolerance:
+        print(f'Algorithm ended after {i} iterations.')
+        print(f't = {t}, f(t) = {f(t)}')
+        break
 
 # Visualization
 def ellipse_f(c, u, v, t):
